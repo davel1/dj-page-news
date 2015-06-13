@@ -4,11 +4,11 @@ from django.db import models
 
 
 class question(models.Model):
-    q = models.TextField()
-    q_date = models.DateTimeField('data quote')
+    q = models.TextField('Question')
+    q_date = models.DateTimeField('Date insert')
     
 class answer(models.Model):
-    r = models.TextField()
-    r_date = models.DateTimeField('data request')
-    public = models.BooleanField()
+    r = models.TextField('Answer')
+    r_date = models.DateTimeField('Date add answer')
+    public = models.BooleanField('Public')
     child = models.ForeignKey(question)
