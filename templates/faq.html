@@ -4,9 +4,9 @@
 <div id="about-text-grid">
 	<p><b>УИТС</b> - факультет "Управления и Информатики в технологических системах" </p>
 	<p>Вопросы и ответы студентов:</p>
-	{% for x in q %}
+	{% for x in faq_q %}
 		<h2>{{ x.q }}</h2>
-		{% for y in a %}
+		{% for y in faq_a %}
 		{% if y.child == x %}
 		<p>{{ y.r }}</p>
 		<p>{{ y.r_date }}</p>
