@@ -1,0 +1,199 @@
+{% load staticfiles %}
+
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>УИТС ВГУИТ &bull; Факультет управления и информатики в технологических системах</title>
+		<link rel="shortcut icon" href="{% static "images/favicon.png" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "style/style.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "style/fonts.css" %}">
+		<script src="{% static "js/jquery-1.9.1.min.js" %}"></script>
+		<script src="{% static "js/script.js" %}"></script>
+	</head>
+	<body>
+		<header>
+			<div id="logo">
+				<a href="/">
+					<img src="{% static "images/logo.png" %}" />
+				</a>
+					<input type="text" name="search" placeholder="Введи текст для поиска" id="searh-grid">
+					<button id="search-button">Поиск</button>
+				</div>
+			<div id="menu">
+					<li><a href="#">Новости</a></li>
+					<li><a href="/faq">Форум</a></li>
+					<li><a href="#">Вики</a></li>
+					<li><a href="#">Игра</a></li>
+					<li><a href="#">Доска почета</a></li>
+			</div>
+		</header>
+		<div id="content">
+			<div id="about">
+				<div id="about-text-grid">
+					<p><b>УИТС</b> - факультет "Управления и Информатики в технологических системах" 
+					</p>
+					<p>текст, <a href="/">пример ссылки</a>.</p>
+					<p>текст, <a href="/">пример ссылки</a>.</p>
+				</div>
+				<div id="about-grid">
+					<div id="photo-about-text-grid">
+					</div>
+					<div id="name-about-text-grid">
+						<p>Сайко Дмитрий Сергеевич</p>
+						<p>Декан УИТС</p>
+						<p><br>Доктор физико-математических наук</p>
+					</div>					
+				</div>
+			</div>
+			<div class="line-cut"></div>
+			<div id="news-repost">
+				<div class="label-grid">
+					Новости
+				</div>
+				<div id="news-base">
+					<div id="news-slider">
+						<div id="news-slider-photo"></div>
+					</div>
+					<div id="news-fast">
+						<div class="news-fast-repost">
+							<div class="name-news-fast-repost">
+								Отличная новость
+							</div>
+							<div class="content-news-fast-repost">Это отличная новость теперь у нас будет отличная новость теперь у нас будет</div>
+							<div class="date-news-fast-repost">
+								26 апреля, 21:00
+							</div>
+						</div>
+						<div class="news-fast-repost">
+							<div class="name-news-fast-repost">
+								Отличная новость
+							</div>
+							<div class="content-news-fast-repost">Это отличная новость теперь у нас будет отличная новость теперь у нас будет</div>
+							<div class="date-news-fast-repost">
+								24 апреля, 21:00
+							</div>
+						</div>
+						<div class="news-fast-repost">
+							<div class="name-news-fast-repost">
+								Отличная новость
+							</div>
+							<div class="content-news-fast-repost">Это отличная новость теперь у нас будет отличная новость теперь у нас будет</div>
+							<div class="date-news-fast-repost">
+								23 апреля, 21:00
+							</div>
+						</div>
+						<div class="news-fast-repost">
+							<div class="name-news-fast-repost">
+								Отличная новость
+							</div>
+							<div class="content-news-fast-repost">Текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст</div>
+							<div class="date-news-fast-repost">
+								20 апреля, 21:00
+							</div>
+						</div>
+						<div class="news-fast-repost">
+							<div class="name-news-fast-repost">
+								Отличная новость
+							</div>
+							<div class="content-news-fast-repost">Это отличная новость теперь у нас будет отличная новость теперь у нас будет</div>
+							<div class="date-news-fast-repost">
+								13 апреля, 21:00
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			<div id="news-repost">
+				<div class="label-grid">
+					События
+				</div>
+				<div id="event-base">
+					<div class="photo-test">
+					</div>
+					<div class="photo-test">
+					</div>
+					<div class="photo-test">
+					</div>
+					<div class="photo-test">
+					</div>
+				</div>
+			</div>
+			<div class="line-cut"></div>
+			<div id="news-repost">
+				<div class="label-grid">
+					Последние документы
+				</div>
+				<div id="event-base">
+					<div class="photo-test">
+					</div>
+					<div class="photo-test">
+					</div>
+					<div class="photo-test">
+					</div>
+					<div class="photo-test">
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div id="footer-menu">
+				<li><a href="/">Главная</a></li>
+				<li><a href="/">Новости</a></li>
+				<li><a href="/">Форум</a></li>
+				<li><a href="/">Вики</a></li>
+				<li><a href="/">Игра</a></li>
+				<li><a href="/">Доска почета</a></li>
+			</div>
+			<div id="second-footer-menu">
+				<li><a href="/">Кафедры</a></li>
+				<li><a href="/">Специальности</a></li>
+				<li><a href="/">Документы</a></li>
+			</div>
+			<div id="third-footer-menu">
+				<li><a href="/">Расписание</a></li>
+				<li style="text-decoration: none !important;list-style-type: none !important;">Сейчас: Числитель</li>
+			</div>
+			<div id="four-footer-menu">
+				<p>Мы в социальных сетях</p>
+			<div id="se-block">
+				<li style="margin-top:4px">
+					<div id="vk-icon">
+						<a href="/">
+							<center>
+								<img src="{% static "images/vk.png" %}" />
+							</center>
+						</a>
+					</div>
+				</li>
+				<li><div id="facebook-icon">
+					<a href="/">
+						<center>
+							<img src="{% static "images/facebook.png" %}" />
+						</center>
+					</a>
+					</div>
+				</li>
+				<li><div id="instagram-icon">
+						<a href="/">
+							<center>
+								<img src="{% static "images/instagram.png" %}" />
+							</center>
+						</a>
+					</div>
+				</li>
+			</div>			
+				<li>
+					<div id="write">
+						<a href="/">Написать нам</a>
+					</div>
+				</li>
+			</div>
+			<div id="fifth-footer-menu">
+				<p style="font-size: 14px;">Факультет Управления и Информатики в технологических системах</p>
+				<hr>
+				<p>Воронежский Государственный Университет Инженерных Технологий</p>
+				<p>© 2015</p>
+			</div>
+		</footer>
+	</body>
+</html>

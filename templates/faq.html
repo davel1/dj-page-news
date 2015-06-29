@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+﻿{% block content %}
+<div id="about-text-grid">
+	<p><b>УИТС</b> - факультет "Управления и Информатики в технологических системах" </p>
+	<p>Вопросы и ответы студентов:</p>
+	{% for x in q %}
+		<h2>{{ x.q }}</h2>
+		{% for y in a %}
+		{% if y.child == x %}
+		<p>{{ y.r }}</p>
+		<p>{{ y.r_date }}</p>
+		{% endif %}
+		{% endfor %}
+		{% endfor %}
+</div>
+{% endblock %}
