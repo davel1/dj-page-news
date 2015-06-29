@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-from django.conf.global_settings import STATIC_ROOT, STATICFILES_DIRS
+from django.conf.global_settings import STATIC_ROOT, STATICFILES_DIRS, MEDIA_URL,\
+    MEDIA_ROOT
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'faq',
     'news',
+    'base_page',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -66,7 +68,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'faq.views.context_faq_list',
+                'base_page.views.context_decan_show',
             ],
         },
     }
@@ -104,7 +108,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
+MEDIA_URL = '/m/'
+MEDIA_ROOT = "/home/davel/workspace/dj-page/dj-page-news/media/"
 STATICFILES_DIRS = (
     "/home/davel/workspace/dj-page/dj-page-news/static",
 )

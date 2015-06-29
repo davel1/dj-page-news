@@ -1,5 +1,4 @@
 {% load staticfiles %}
-
 ﻿<!DOCTYPE html>
 <html>
 	<head>
@@ -39,11 +38,12 @@
 				{% endblock %}
 				<div id="about-grid">
 					<div id="photo-about-text-grid">
+					<img width="210" height="300" src="{{ MEDIA_URL }}{{ decan_obj.photo }}">
 					</div>
 					<div id="name-about-text-grid">
-						<p>Сайко Дмитрий Сергеевич</p>
+						<p>{{ decan_obj.name }}</p>
 						<p>Декан УИТС</p>
-						<p><br>Доктор физико-математических наук</p>
+						<p><br>{{ decan_obj.description }}</p>
 					</div>					
 				</div>
 			</div>
