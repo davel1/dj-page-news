@@ -7,14 +7,9 @@ from django.template.loader import get_template
 
 
 def index(request):
-    #return HttpResponse("Hello! You see faq")
+    contex = RequestContext(request)
     t = get_template('faq.html')
-    c = RequestContext(request)
-    c.push({'x':'hello!'})
-    #contex = {}
-    #contex['faq_q'] = question.objects.all()
-    #contex['faq_a'] = answer.objects.all()
-    return HttpResponse(t.render(c))
+    return HttpResponse(t.render(contex))
 
 def REST_faq_list(Request):
     context = ""

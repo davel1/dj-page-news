@@ -5,9 +5,10 @@
 		<title>УИТС ВГУИТ &bull; Факультет управления и информатики в технологических системах</title>
 		<link rel="shortcut icon" href="{% static "images/favicon.png" %}">
 		<link rel="stylesheet" type="text/css" href="{% static "style/style.css" %}">
-		<link rel="stylesheet" type="text/css" href="{% static "style/fonts.css" %}">
+		<!-- <link rel="stylesheet" type="text/css" href="{% static "style/fonts.css" %}"> --!>
 		<script src="{% static "js/jquery-1.9.1.min.js" %}"></script>
 		<script src="{% static "js/script.js" %}"></script>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
 	</head>
 	<body>
 		<header>
@@ -30,15 +31,14 @@
 			<div id="about">
 				{% block content %}
 				<div id="about-text-grid">
-					<p><b>УИТС</b> - факультет "Управления и Информатики в технологических системах" 
-					</p>
-					<p><a href="/">пример ссылки</a>.</p>
-					<p>текст, <a href="/">пример ссылки</a>.</p>
+					<p><b>УИТС</b> - факультет "Управления и Информатики в технологических системах"</p>
+					</br>
+					<p>Главная страница. взята из base.html</p>
 				</div>
 				{% endblock %}
 				<div id="about-grid">
 					<div id="photo-about-text-grid">
-					<img width="210" height="300" src="{{ MEDIA_URL }}{{ decan_obj.photo }}">
+					<img width="210" height="263" src="{{ MEDIA_URL }}{{ decan_obj.photo }}">
 					</div>
 					<div id="name-about-text-grid">
 						<p>{{ decan_obj.name }}</p>
@@ -58,52 +58,20 @@
 						<div id="news-slider-photo"></div>
 					</div>
 					<div id="news-fast">
+				{% block news-fast %}
+					{% for x in news_article %}
 						<div class="news-fast-repost">
 							<div class="name-news-fast-repost">
-								Отличная новость
+								{{ x.head }}
 							</div>
-							<div class="content-news-fast-repost">Это отличная новость теперь у нас будет отличная новость теперь у нас будет</div>
+							<div class="content-news-fast-repost"> {{ x.text }} </div>
 							<div class="date-news-fast-repost">
-								26 апреля, 21:00
+								{{ x.pub_date }}
 							</div>
 						</div>
-						<div class="news-fast-repost">
-							<div class="name-news-fast-repost">
-								Отличная новость
-							</div>
-							<div class="content-news-fast-repost">Это отличная новость теперь у нас будет отличная новость теперь у нас будет</div>
-							<div class="date-news-fast-repost">
-								24 апреля, 21:00
-							</div>
-						</div>
-						<div class="news-fast-repost">
-							<div class="name-news-fast-repost">
-								Отличная новость
-							</div>
-							<div class="content-news-fast-repost">Это отличная новость теперь у нас будет отличная новость теперь у нас будет</div>
-							<div class="date-news-fast-repost">
-								23 апреля, 21:00
-							</div>
-						</div>
-						<div class="news-fast-repost">
-							<div class="name-news-fast-repost">
-								Отличная новость
-							</div>
-							<div class="content-news-fast-repost">Текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст</div>
-							<div class="date-news-fast-repost">
-								20 апреля, 21:00
-							</div>
-						</div>
-						<div class="news-fast-repost">
-							<div class="name-news-fast-repost">
-								Отличная новость
-							</div>
-							<div class="content-news-fast-repost">Это отличная новость теперь у нас будет отличная новость теперь у нас будет</div>
-							<div class="date-news-fast-repost">
-								13 апреля, 21:00
-							</div>
-						</div>
-					{% endblock %}
+					{% endfor %}
+				{% endblock %}
+				{% endblock %}
 					</div>
 					</div>
 				</div>

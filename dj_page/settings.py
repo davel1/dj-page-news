@@ -71,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'faq.views.context_faq_list',
                 'base_page.views.context_decan_show',
+                'news.views.context_news_list',
             ],
         },
     }
