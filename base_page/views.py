@@ -14,3 +14,4 @@ def index(request):
     contex = RequestContext(request)
     t = get_template('base.html')
     return HttpResponse(t.render(contex))
+

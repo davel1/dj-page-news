@@ -1,4 +1,5 @@
 from django.db import models
+from import_export import resources
 
 # Create your models here.
 
@@ -9,3 +10,15 @@ class People(models.Model):
     position = models.CharField(max_length=30)
     photo = models.FileField(upload_to='photos')
     
+class GroupList(models.Model):
+    group = models.CharField(max_length = 30)
+    num = models.PositiveIntegerField()
+    name = models.CharField(max_length = 120)
+    register = models.NullBooleanField(default = False)
+    def __str__(self):
+        return "%s" % self.num
+    
+class GroupResource(resources.ModelResource):
+    class Meta:
+        model = GroupList
+        #fields = ('group', 'num', 'name')

@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'faq',
     'news',
     'base_page',
+    'import_export',
 )
 
 MIDDLEWARE_CLASSES = (
