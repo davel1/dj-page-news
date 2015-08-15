@@ -10,3 +10,4 @@ news, faq, main page
 * django 1.8.4
 * MySql
 * PyDev + Eclipse
+* django-import-export 0.2.8
