@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^faq/', include('faq.urls')),
     url(r'^$', include('base_page.urls')),
     url(r'^news/', include('news.urls')),
-
+    url('', include('social.apps.django_app.urls', namespace='social'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

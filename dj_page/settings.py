@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'news',
     'base_page',
     'import_export',
+    'social.apps.django_app.default',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -73,6 +74,8 @@ TEMPLATES = [
                 'faq.views.context_faq_list',
                 'base_page.views.context_decan_show',
                 'news.views.context_news_list',
+                'social.apps.django_app.context_processors.backends',
+               # 'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     }
@@ -115,3 +118,15 @@ MEDIA_ROOT = "/home/davel/workspace/dj-page/dj-page-news/media/"
 STATICFILES_DIRS = (
     "/home/davel/workspace/dj-page/dj-page-news/static",
 )
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.vk.VKOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = '5033642 '
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'QwTEsBFIXPSS7JCJh1wo'
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email', 'status']
+
