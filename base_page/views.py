@@ -6,8 +6,10 @@ from django.http import HttpResponse
 # Create your views here.
 
 def context_decan_show(request):
-    decan_obj = People.objects.get(position = 'Decan')
-    decan_obj
+    try:
+        decan_obj = People.objects.get(position = 'Decan')
+    except:
+        return {}
     return {'decan_obj': decan_obj}
 
 def index(request):

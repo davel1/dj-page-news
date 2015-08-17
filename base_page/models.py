@@ -1,6 +1,6 @@
 from django.db import models
 from import_export import resources
-
+from django.contrib.auth.models import AbstractUser, UserManager
 # Create your models here.
 
 class People(models.Model):
@@ -22,3 +22,6 @@ class GroupResource(resources.ModelResource):
     class Meta:
         model = GroupList
         #fields = ('group', 'num', 'name')
+
+class MyUser(AbstractUser):
+    num = models.PositiveIntegerField(default  = 0)
