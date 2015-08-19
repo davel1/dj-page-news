@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+﻿{% block content %}
+<div id="about-text-grid">
+	<p><b>УИТС</b> - факультет "Управления и Информатики в технологических системах" </p>
+	<style type="text/css">
+   TABLE {
+    border-top: 2px solid #000; /* Линия сверху таблицы */
+    border-bottom: 2px solid #000; /* Линия внизу таблицы */
+   }
+   TD, TH {
+    padding: 3px; /* Поля вокруг содержимого ячеек */
+   }
+   TH {
+    text-align: left; /* Выравнивание текста по левому краю */
+    border-bottom: 1px solid #000; /* Линия под верхним заголовком */
+   }
+  </style>
+  
+	<p><h2>{{ gl.group }}:{{ gl.name }}</h2></p>
+	<p>Достижения:</p>
+	<table cellspacing="0">
+   <tr>
+    <th>Достижение</th><th>дата</th>
+   </tr>
+   {% for x in c %}
+   <tr>
+    <td><a href="{{ x.pk }}">{{ x.article }}</a></td><td>{{ x.date_event }}</td>
+   </tr>
+   {% endfor %}
+   </table>	
+</div>
+{% endblock %}

@@ -24,7 +24,8 @@
 					<li><a href="{% url 'faq' %}">Форум</a></li>
 					<li><a href="#">Вики</a></li>
 					<li><a href="#">Игра</a></li>
-					<li><a href="#">Доска почета</a></li>
+					<li><a href="{%  url 'gl' %}">Доска почета</a></li>
+					
 			</div>
 		</header>
 		<div id="content">
@@ -125,7 +126,7 @@
 			</div>
 			<div id="third-footer-menu">
 				<li><a href="/">Расписание</a></li>
-				<li style="text-decoration: none !important;list-style-type: none !important;">Сейчас: Числитель</li>
+				<li style="text-decoration: none !important;list-style-type: none !important;">Сейчас: {{ moddate }}</li>
 			</div>
 			<div id="four-footer-menu">
 				<p>Мы в социальных сетях</p>

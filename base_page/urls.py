@@ -4,4 +4,6 @@ from base_page import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^list/', views.groups_list, name='gl'),
+    url(r'^(?P<id>[0-9]+)/$', views.groups_details, name='gl_detail'),
 ]

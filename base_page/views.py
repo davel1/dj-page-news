@@ -1,19 +1,44 @@
 from django.shortcuts import render
 from django.template import RequestContext
-from .models import People
+from .models import People, Honors, GroupList, ModDate
 from django.template.loader import get_template
 from django.http import HttpResponse
 # Create your views here.
 
 def context_decan_show(request):
+    contex = {}
     try:
         decan_obj = People.objects.get(position = 'Decan')
     except:
-        return {}
-    return {'decan_obj': decan_obj}
+        pass
+    contex.update({'decan_obj': decan_obj})
+    c = ModDate.objects.get(pk=1)
+    contex.update({'moddate': c.get_mod()})
+    return contex
 
 def index(request):
     contex = RequestContext(request)
     t = get_template('base.html')
     return HttpResponse(t.render(contex))
 
+def honors(request):
+    pass
+
+def groups_list(request):
+    g = GroupList.objects.all()
+    contex = RequestContext(request)
+    contex.update({'gl': g})
+    t = get_template('gl.html')
+    return HttpResponse(t.render(contex))
+
+def groups_details(request, id):
+    try:
+        g = GroupList.objects.get(pk = id)
+    except:
+        raise Http404("No user!")
+    c = Honors.objects.filter(student = g)
+    contex = RequestContext(request)
+    contex.update({'gl': g})
+    contex.update({'c': c})
+    t = get_template('gl_details.html')
+    return HttpResponse(t.render(contex))
