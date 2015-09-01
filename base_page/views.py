@@ -21,8 +21,6 @@ def index(request):
     t = get_template('base.html')
     return HttpResponse(t.render(contex))
 
-def honors(request):
-    pass
 
 def groups_list(request):
     g = GroupList.objects.all()
@@ -41,4 +39,18 @@ def groups_details(request, id):
     contex.update({'gl': g})
     contex.update({'c': c})
     t = get_template('gl_details.html')
+    return HttpResponse(t.render(contex))
+
+def honor_details(request, id, hon):
+    try:
+        g = GroupList.objects.get(pk = id)
+    except:
+        raise Http404("No user!")
+    try:
+        c = Honors.objects.get(pk = hon)
+    except:
+        raise Http404("No honor!")
+    contex = RequestContext(request)
+    contex.update({'c': c})
+    t = get_template('honor_details.html')
     return HttpResponse(t.render(contex))

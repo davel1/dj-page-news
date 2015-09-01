@@ -13,3 +13,13 @@ def context_news_list(request):
     context = {}
     context['news_article'] = article.objects.all()
     return context
+
+def news_details(request, id):
+    try:
+        n = article.objects.get(pk = id)
+    except:
+        raise Http404("No news!")
+    contex = RequestContext(request)
+    contex.update({'news': n})
+    t = get_template('news_details.html')
+    return HttpResponse(t.render(contex))

@@ -43,7 +43,7 @@ class MyUser(AbstractUser):
     
 class Honors(models.Model):
     student = models.ForeignKey(GroupList)
-    photo = models.FileField(upload_to='honors')
+    photo = models.ImageField(upload_to='honors')
     article = models.CharField(max_length = 60)
     description = models.TextField()
     date_event = models.DateTimeField()
@@ -51,7 +51,7 @@ class Honors(models.Model):
         return self.article
     
 class ModDate(models.Model):
-    current_date = models.DateField()
+    current_date = models.DateTimeField()
     mod = models.BooleanField()
     
     def __unicod__(self):
@@ -60,8 +60,9 @@ class ModDate(models.Model):
         return str('denominator')
     
     def get_mod(self):
-      #  if (timezone.now() - self.current_date) > datetime.date(day = 7):
-      #      self.mod = not self.mod
+        if self.current_date < timezone.now() - datetime.timedelta(days=1):
+           self.mod = not self.mod
+           self.current_date = timezone.now()
         return self.__unicod__()
     
     

@@ -24,7 +24,7 @@
 					<li><a href="{% url 'faq' %}">Форум</a></li>
 					<li><a href="#">Вики</a></li>
 					<li><a href="#">Игра</a></li>
-					<li><a href="{%  url 'gl' %}">Доска почета</a></li>
+					<li><a href="{%  url 'gl' %}">Наши люди</a></li>
 					
 			</div>
 		</header>
@@ -34,6 +34,7 @@
 				<div id="about-text-grid">
 					<p><b>УИТС</b> - факультет "Управления и Информатики в технологических системах"</p>
 					</br>
+					<p>Сейчас: {{ moddate }}</p>
 					<p>Главная страница. взята из base.html</p>
 					<p><a href="{% url 'social:begin' 'vk-oauth2' %}">vk login</a></p>
 					
@@ -65,7 +66,7 @@
 					{% for x in news_article %}
 						<div class="news-fast-repost">
 							<div class="name-news-fast-repost">
-								{{ x.head }}
+								<a href="{% url 'news_detail' x.pk %}">{{ x.head }}</a>
 							</div>
 							<div class="content-news-fast-repost"> {{ x.text }} </div>
 							<div class="date-news-fast-repost">

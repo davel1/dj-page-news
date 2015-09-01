@@ -10,6 +10,47 @@ body {
 }
 
 
+.news_header {
+	width: 70%;
+	color: #3582c8;
+	font-size: 18px;
+	#font-family: Roboto;
+	font-weight: normal;
+}
+
+.news_headline {
+	#margin-bottom: -15px;
+}
+
+.news_content {
+	width: 70%;
+	background-color: #e8f1f8;
+	#font-family: Roboto;
+}
+
+.news_text {
+	padding-left: 10px;
+	padding-top: 6px;
+	padding-bottom: 15px;
+	padding-right: 10px;
+	font-size: 15px;
+}
+
+.dark_icon {
+	float: left;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	margin-top: -10px;
+}
+
+.news_data {
+	float: left;
+	font-size: 15px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	margin-top: -5px;
+}
+
 header {
 	margin: 0 auto;
 	margin-top: 35px;
@@ -437,4 +478,46 @@ footer a:active {
 
 #write:after {
 	content: url('images/pen.png');
+}
+
+
+/* font-family: "RobotoRegular"; */
+@font-face {
+    font-family: "RobotoRegular";
+    src: url("../fonts/RobotoRegular/RobotoRegular.eot");
+    src: url("../fonts/RobotoRegular/RobotoRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/RobotoRegular/RobotoRegular.woff") format("woff"),
+    url("../fonts/RobotoRegular/RobotoRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "RobotoLight"; */
+@font-face {
+    font-family: "RobotoLight";
+    src: url("../fonts/RobotoLight/RobotoLight.eot");
+    src: url("../fonts/RobotoLight/RobotoLight.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/RobotoLight/RobotoLight.woff") format("woff"),
+    url("../fonts/RobotoLight/RobotoLight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "RobotoMedium"; */
+@font-face {
+    font-family: "RobotoMedium";
+    src: url("../fonts/RobotoMedium/RobotoMedium.eot");
+    src: url("../fonts/RobotoMedium/RobotoMedium.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/RobotoMedium/RobotoMedium.woff") format("woff"),
+    url("../fonts/RobotoMedium/RobotoMedium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "RobotoBold"; */
+@font-face {
+    font-family: "RobotoBold";
+    src: url("../fonts/RobotoBold/RobotoBold.eot");
+    src: url("../fonts/RobotoBold/RobotoBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/RobotoBold/RobotoBold.woff") format("woff"),
+    url("../fonts/RobotoBold/RobotoBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
 }
