@@ -3,6 +3,7 @@ from django.template import RequestContext
 from .models import People, Honors, GroupList, ModDate
 from django.template.loader import get_template
 from django.http import HttpResponse
+from django.http import Http404
 # Create your views here.
 
 def context_decan_show(request):
@@ -53,4 +54,9 @@ def honor_details(request, id, hon):
     contex = RequestContext(request)
     contex.update({'c': c})
     t = get_template('honor_details.html')
+    return HttpResponse(t.render(contex))
+
+def profile(request):
+    contex = RequestContext(request)
+    t = get_template('profile.html')
     return HttpResponse(t.render(contex))

@@ -3,6 +3,7 @@ from django.template import RequestContext
 from django.template.loader import get_template
 from django.http import HttpResponse
 from .models import article
+from django.http import Http404
 # Create your views here.
 def index(request):
     contex = RequestContext(request)
