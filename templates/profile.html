@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+﻿{% block content %}
+<div id="about-text-grid">
+<p><h2>Профиль пользователя {{ user.username }}</h2></p>
+	{% if not user.is_student %}
+	<form action="{% url 'set_stud'  %}set_stud" method="post">
+	{% csrf_token %}
+    <input type="text" name="number" placeholder="Введите номер зачетки" pattern="^[ 0-9]+$" value="" />
+	<input type="submit" value="Отправить" />
+	</form>
+	{% endif %}
+	{{ user.id }}
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+﻿{% block content %}
+<div id="about-text-grid">
+	<p><b>УИТС</b> - факультет "Управления и Информатики в технологических системах" </p>
+	<p>Достижения:</p>
+   <h3>{{ c.article }}</h3>
+   <p>{{ c.description }}</p>
+   <a href="{{ c.photo.url }}"><img src="{{ c.photo.url }}" 
+ width="250" height="250" alt="honor"></a>
+   <p>{{ c.date_event }}</p>
+</div>
+{% endblock %}
