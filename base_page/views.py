@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.template import RequestContext
-from .models import People, Honors, GroupList, ModDate
+from .models import People, Honors, GroupList, ModDate, MyUser
 from django.template.loader import get_template
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.http import Http404
+from django.contrib.auth.decorators import login_required
+from django.conf import settings
 # Create your views here.
 
 def context_decan_show(request):
@@ -57,6 +60,23 @@ def honor_details(request, id, hon):
     return HttpResponse(t.render(contex))
 
 def profile(request):
+    contex = RequestContext(request)
+    t = get_template('profile.html')
+    return HttpResponse(t.render(contex))
+
+@login_required
+def set_stud(request):
+    n = request.POST['number']
+    try:
+        g = GroupList.objects.get(num=int(n))
+    except:
+        raise Http404("No student")
+    try:
+        u = MyUser.objects.get(id=request.user.id)
+    except:
+        raise Http404("No user") 
+    if u.set_stud(g.name, g.num):
+        raise Http404("ok") 
     contex = RequestContext(request)
     t = get_template('profile.html')
     return HttpResponse(t.render(contex))

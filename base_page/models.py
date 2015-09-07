@@ -34,9 +34,15 @@ class MyUser(AbstractUser):
     
     def __unicode__(self):
         if self.student:
-            return self.stud_full_name
+            return str(self.stud_full_name)
         return self.get_full_name()
-        
+    
+    def set_stud(self, name, numb):
+        self.stud_full_name = name
+        self.num = numb
+        self.student = True
+        return True
+    
     def is_student(self):
         if self.student:
             return True

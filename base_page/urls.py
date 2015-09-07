@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^(?P<id>[0-9]+)/$', views.groups_details, name='gl_detail'),
     url(r'^(?P<id>[0-9]+)/(?P<hon>[0-9]+)/$', views.honor_details, name='honor_detail'),
     url(r'^profile/', views.profile),
+    url(r'^set_stud/', views.set_stud, name='set_stud'),
 ]
