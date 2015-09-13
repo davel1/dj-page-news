@@ -521,3 +521,43 @@ footer a:active {
     font-style: normal;
     font-weight: normal;
 }
+
+/* accordian */
+
+.accordian {
+	width: 100%;
+	//padding-top:20px;
+	//padding-left:10px;
+	//padding-bottom:20px;
+	//padding-right:10px;	
+}
+
+.accordian li {
+	list-style-type: none;
+	padding: 0 5px;
+}
+.lib {
+	background-color:#E8F0F8;
+}
+.dimension {
+	//height: 400px;
+}
+	
+.even, .odd {
+	font-weight: bold;
+	height: 28px;
+	padding-top: 3px;
+	padding-left: 10px;
+}
+	
+.even {
+	border: 1px solid #ffffff;
+	background-color: #266CB2;
+	color: white;
+}
+
+.odd {
+	border: 1px solid #ffffff;
+	background-color: #266CB2;
+	color: white;
+}	

@@ -1,17 +1,26 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 ﻿{% block content %}
 <div id="about-text-grid">
-	<p><b>УИТС</b> - факультет "Управления и Информатики в технологических системах" </p>
-	<p><h2>Вопросы и ответы студентов:</h2></p>
-	{% for x in faq_q %}
-		<h2>{{ x.q }}</h2>
-		{% for y in faq_a %}
-		{% if y.child == x %}
-		<p>{{ y.r }}</p>
-		<p>{{ y.r_date }}</p>
-		{% endif %}
+<div style="width:100%; margin-left:auto; margin-right:auto;">	
+<div class="label-grid">
+					Вопросы
+				</div>
+	<div class="accordian" style="width:100%">
+    	<ul style="width:100%;">
+    	{% for x in faq_q %}
+    	<li>{{ x.q }}</li>
+    	<li class="lib">
+    		{% for y in faq_a %}
+				{% if y.child == x %}
+				<p>{{ y.r }}</p>
+				<p>{{ y.r_date }}</p>
+				{% endif %}
+			{% endfor %}
+		</li>
 		{% endfor %}
-		{% endfor %}
+    	</ul>
+    </div>      
+</div>
 </div>
 {% endblock %}

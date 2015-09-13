@@ -8,6 +8,9 @@
 		<!-- <link rel="stylesheet" type="text/css" href="{% static "style/fonts.css" %}"> --!>
 		<script src="{% static "js/jquery-1.9.1.min.js" %}"></script>
 		<script src="{% static "js/script.js" %}"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script> 
+		<script type="text/javascript" src="{% static "js/jquery.color.js" %}"></script> 
+		<script type="text/javascript" src="{% static "js/jMenu.js" %}"></script> 
 		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
 </head>
 	<body>
@@ -23,8 +26,13 @@
 					<li><a href="{% url 'news' %}">Новости</a></li>
 					<li><a href="{% url 'faq' %}">Форум</a></li>
 					<li><a href="#">Вики</a></li>
-					<li><a href="#">Игра</a></li>
 					<li><a href="{%  url 'gl' %}">Наши люди</a></li>
+					{% if user.is_authenticated %}
+					<li><a href="{% url 'profile' %}">Профиль</a></li>
+					{% else %}
+					<li><a href="{% url 'auth' %}">Вход</a></li>
+					{% endif %}
+					
 					
 			</div>
 		</header>
@@ -36,7 +44,6 @@
 					</br>
 					<p>Сейчас: {{ moddate }}</p>
 					<p>Главная страница. взята из base.html</p>
-					<p><a href="{% url 'auth' %}">login</a></p>
 				</div>
 				{% endblock %}
 				<div id="about-grid">
@@ -78,37 +85,7 @@
 					</div>
 					</div>
 				</div>
-			<div id="news-repost">
-				<div class="label-grid">
-					События
-				</div>
-				<div id="event-base">
-					<div class="photo-test">
-					</div>
-					<div class="photo-test">
-					</div>
-					<div class="photo-test">
-					</div>
-					<div class="photo-test">
-					</div>
-				</div>
-			</div>
-			<div class="line-cut"></div>
-			<div id="news-repost">
-				<div class="label-grid">
-					Последние документы
-				</div>
-				<div id="event-base">
-					<div class="photo-test">
-					</div>
-					<div class="photo-test">
-					</div>
-					<div class="photo-test">
-					</div>
-					<div class="photo-test">
-					</div>
-				</div>
-			</div>
+			
 		</div>
 		<footer>
 			<div id="footer-menu">
