@@ -9,7 +9,7 @@
 		<script src="{% static "js/jquery-1.9.1.min.js" %}"></script>
 		<script src="{% static "js/script.js" %}"></script>
 		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
-	</head>
+</head>
 	<body>
 		<header>
 			<div id="logo">
@@ -36,8 +36,7 @@
 					</br>
 					<p>Сейчас: {{ moddate }}</p>
 					<p>Главная страница. взята из base.html</p>
-					<p><a href="{% url 'social:begin' 'vk-oauth2' %}">vk login</a></p>
-					
+					<p><a href="{% url 'auth' %}">login</a></p>
 				</div>
 				{% endblock %}
 				<div id="about-grid">

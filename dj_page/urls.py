@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from news import views
+from base_page import views
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -25,6 +25,10 @@ urlpatterns = [
     url(r'', include('base_page.urls')),
     url(r'^gl/', include('base_page.urls')),
     url(r'^news/', include('news.urls')),
+    url(r'^accounts/login/$', views.signin, name='auth'),
+    url(r'^accounts/logout/$', views.logout_views, name='auth_logout'),
+    url(r'^profile/', views.profile, name='profile'),
+    url(r'^set_stud/', views.set_stud, name='set_stud'),
     url('', include('social.apps.django_app.urls', namespace='social')),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

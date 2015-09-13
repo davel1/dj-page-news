@@ -1,0 +1,41 @@
+{% load staticfiles %}
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>УИТС ВГУИТ &bull; Факультет управления и информатики в технологических системах</title>
+		<link rel="shortcut icon" href="{% static "images/favicon.png" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "style/login.css" %}">
+		<!-- <link rel="stylesheet" type="text/css" href="{% static "style/fonts.css" %}"> --!>
+		<script src="{% static "js/jquery-1.9.1.min.js" %}"></script>
+		<script src="{% static "js/script.js" %}"></script>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+</head>
+<body>
+
+
+    <div class="vladmaxi-top">
+        <a href="/" target="_blank">На главную</a>
+        <span class="right">
+        <a href="{{ request.META.HTTP_REFERER }}">
+                <strong>Вернуться назад</strong>
+        </a>
+        </span>
+    <div class="clr"></div>
+    </div>
+
+    <div id="login-form">
+        <h1>Авторизация на сайте</h1>
+        <fieldset>
+            <form action="{% url 'auth'  %}" method="post">
+                <input type="text" required name="login" value="Логин" onBlur="if(this.value=='')this.value='Логин'" onFocus="if(this.value=='Логин')this.value='' ">
+                {% csrf_token %}
+                <input type="password" required  name="pass" value="Пароль" onBlur="if(this.value=='')this.value='Пароль'" onFocus="if(this.value=='Пароль')this.value='' ">
+                <input type="submit" value="ВОЙТИ">
+                <footer class="clearfix">
+                    <p><span class="info"><a href="{% url 'social:begin' 'vk-oauth2' %}">vk</a></span></p>
+                </footer>
+            </form>
+        </fieldset>
+    </div>
+</body>
+</html>

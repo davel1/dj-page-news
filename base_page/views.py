@@ -6,6 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
 from django.conf import settings
 # Create your views here.
 
@@ -59,10 +60,34 @@ def honor_details(request, id, hon):
     t = get_template('honor_details.html')
     return HttpResponse(t.render(contex))
 
+@login_required
 def profile(request):
     contex = RequestContext(request)
     t = get_template('profile.html')
     return HttpResponse(t.render(contex))
+
+def signin(request):
+    if request.method != 'POST':
+        contex = RequestContext(request)
+        t = get_template('signin.html')
+        return HttpResponse(t.render(contex))
+    
+    username = request.POST['login']
+    password = request.POST['pass']
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            return HttpResponseRedirect(reverse('profile'))
+        else:
+            raise Http404("disabled account")
+    else:
+        raise Http404("invalid login")
+    
+def logout_views(request):
+    if request.user.is_authenticated():
+        logout(request)
+        return HttpResponseRedirect('/')
 
 @login_required
 def set_stud(request):
@@ -75,8 +100,6 @@ def set_stud(request):
         u = MyUser.objects.get(id=request.user.id)
     except:
         raise Http404("No user") 
-    if u.set_stud(g.name, g.num):
-        raise Http404("ok") 
-    contex = RequestContext(request)
-    t = get_template('profile.html')
-    return HttpResponse(t.render(contex))
+    u.set_stud(g.name, g.num)
+    u.save()
+    return HttpResponseRedirect(reverse('profile'))

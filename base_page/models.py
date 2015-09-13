@@ -34,7 +34,7 @@ class MyUser(AbstractUser):
     
     def __unicode__(self):
         if self.student:
-            return str(self.stud_full_name)
+            return self.stud_full_name
         return self.get_full_name()
     
     def set_stud(self, name, numb):
