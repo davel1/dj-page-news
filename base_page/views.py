@@ -63,6 +63,9 @@ def honor_details(request, id, hon):
 @login_required
 def profile(request):
     contex = RequestContext(request)
+    pf = {}
+    pf['status'] = 'student' # TODO: get status!
+    contex.push({'pf':pf})
     t = get_template('profile.html')
     return HttpResponse(t.render(contex))
 

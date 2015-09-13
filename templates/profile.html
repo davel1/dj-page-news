@@ -9,8 +9,40 @@
     <input type="text" name="number" placeholder="Введите номер зачетки" pattern="^[ 0-9]+$" value="" />
 	<input type="submit" value="Отправить" />
 	</form>
+	
+	{% else %}
+	<p>зачетка № {{user.num}}</p>
 	{% endif %}
-	<a href="{% url 'auth_logout' %}">logout</a>
-	{{ user.id }}
+	<p>Должность: {{ pf.status }}</p>
+	<p><a href="#">Рейтинг</a></p>
+	<p><a href="#">Расписание</a></p>
+	<p><a href="#">Изменить логин и пароль</a></p>
+	<p><a href="{% url 'auth_logout' %}">Выйти</a></p>
+	
+	<div style="width:100%; margin-left:auto; margin-right:auto;">	
+	<div class="accordian" style="width:100%">
+    	<ul style="width:100%;">
+    	
+    	<li><p>add news</p></li>
+    	<li class="lib">
+    		<p>form</p>
+    		<p>news</p>
+		</li>
+		
+		<li><p>add faq</p></li>
+    	<li class="lib">
+    		<p>form</p>
+    		<p>faq</p>
+		</li>
+
+		<li><p>change password and login</p></li>
+    	<li class="lib">
+    		<p>form</p>
+    		<p>change</p>
+		</li>
+    	</ul>
+</div>
+</div>
+
 </div>
 {% endblock %}
