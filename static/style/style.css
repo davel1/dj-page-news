@@ -560,4 +560,29 @@ footer a:active {
 	border: 1px solid #ffffff;
 	background-color: #266CB2;
 	color: white;
+}
+
+#button {
+	list-style-type: none;
+	width: 80%;
+	padding: 0 5px;
+	border: 1px solid #ffffff;
+	background-color: #266CB2;
+	color: white;
+	font-weight: bold;
+	height: 28px;
 }	
+#button a {
+	color:white;
+	text-decoration:underline;
+}
+
+#button a:hover {
+	color:white;
+	text-decoration:none;
+}
+
+#button a:active {
+	color:white;
+	text-decoration:none;
+}

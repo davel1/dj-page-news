@@ -46,7 +46,9 @@
 					<p>Главная страница. взята из base.html</p>
 				</div>
 				{% endblock %}
+				
 				<div id="about-grid">
+				{% block about %}
 					<div id="photo-about-text-grid">
 					<img width="210" height="263" src="{{ MEDIA_URL }}{{ decan_obj.photo }}">
 					</div>
@@ -54,7 +56,8 @@
 						<p>{{ decan_obj.name }}</p>
 						<p>Декан УИТС</p>
 						<p><br>{{ decan_obj.description }}</p>
-					</div>					
+					</div>	
+					{% endblock %}				
 				</div>
 			</div>
 			<div class="line-cut"></div>

@@ -14,15 +14,15 @@
 	<p>зачетка № {{user.num}}</p>
 	{% endif %}
 	<p>Должность: {{ pf.status }}</p>
-	<p><a href="#">Рейтинг</a></p>
-	<p><a href="#">Расписание</a></p>
-	<p><a href="#">Изменить логин и пароль</a></p>
-	<p><a href="{% url 'auth_logout' %}">Выйти</a></p>
-	
+	<ul style="width:100%;">
+		<li id="button"><p><a href="#">Рейтинг</a></p></li>
+		<li id="button"><p><a href="#">Расписание</a></p></li>
+		<li id="button"><p><a href="#">Изменить логин и пароль</a></li>
+		<li id="button"><p><a href="{% url 'auth_logout' %}">Выйти</a></p></li>
+	</ul>
 	<div style="width:100%; margin-left:auto; margin-right:auto;">	
 	<div class="accordian" style="width:100%">
     	<ul style="width:100%;">
-    	
     	<li><p>add news</p></li>
     	<li class="lib">
     		<p>form</p>
@@ -41,6 +41,7 @@
     		<p>change</p>
 		</li>
     	</ul>
+    	
 </div>
 </div>
 

@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'base_page',
     'import_export',
     'social.apps.django_app.default',
+
 )
 
 MIDDLEWARE_CLASSES = (
