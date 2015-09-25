@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-﻿{% block content %}
+{% load wysiwyg %}
+
+{% block head %}
+{% wysiwyg_setup %}
+{% endblock %}
+﻿
+{% block content %}
+
 <div id="about-text-grid">
 <p><h2>Профиль пользователя {{ user.username }}</h2></p>
 	{% if not user.is_student %}
@@ -31,14 +38,18 @@
 		
 		<li><p>add faq</p></li>
     	<li class="lib">
-    		<p>form</p>
-    		<p>faq</p>
+			<form action="{% url 'set_stud'  %}" method="post">
+			{% csrf_token %} 
+    		<textarea id="question">This is some text. Please edit it</textarea>
+    		{% wysiwyg_editor "question" %}
+   			<input type="text" name="number" placeholder="Введите номер зачетки" pattern="^[ 0-9]+$" value="" />
+			<input type="submit" value="Отправить" />
+			</form>	
 		</li>
 
 		<li><p>change password and login</p></li>
     	<li class="lib">
-    		<p>form</p>
-    		<p>change</p>
+    		
 		</li>
     	</ul>
     	

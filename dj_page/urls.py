@@ -30,5 +30,6 @@ urlpatterns = [
     url(r'^profile/', views.profile, name='profile'),
     url(r'^set_stud/', views.set_stud, name='set_stud'),
     url('', include('social.apps.django_app.urls', namespace='social')),
+
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

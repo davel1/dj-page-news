@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser, UserManager
 from django.conf import settings
 import datetime
 from django.utils import timezone
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 class People(models.Model):
@@ -52,7 +53,7 @@ class Honors(models.Model):
     student = models.ForeignKey(GroupList)
     photo = models.ImageField(upload_to='honors')
     article = models.CharField(max_length = 60)
-    description = models.TextField()
+    description = RichTextField()
     date_event = models.DateTimeField()
     def __unicode__(self):
         return self.article

@@ -1,4 +1,5 @@
 {% load staticfiles %}
+
 ﻿<!DOCTYPE html>
 <html>
 	<head>
@@ -12,6 +13,7 @@
 		<script type="text/javascript" src="{% static "js/jquery.color.js" %}"></script> 
 		<script type="text/javascript" src="{% static "js/jMenu.js" %}"></script> 
 		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+		{% block head %}{% endblock %}
 </head>
 	<body>
 		<header>

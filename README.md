@@ -12,3 +12,5 @@ news, faq, main page
 * PyDev + Eclipse
 * django-import-export 0.2.8
 * python-social-auth
+* django-wysiwyg
+* django-ckeditor

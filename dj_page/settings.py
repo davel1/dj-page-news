@@ -44,7 +44,8 @@ INSTALLED_APPS = (
     'base_page',
     'import_export',
     'social.apps.django_app.default',
-
+    'django_wysiwyg',
+    'ckeditor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -118,6 +119,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/m/'
 MEDIA_ROOT = "/home/davel/workspace/dj-page/dj-page-news/media/"
+STATIC_ROOT = "/home/davel/workspace/dj-page/dj-page-news/s/"
 STATICFILES_DIRS = (
     "/home/davel/workspace/dj-page/dj-page-news/static",
 )
@@ -136,3 +138,14 @@ SOCIAL_AUTH_VK_OAUTH2_SECRET = 'QwTEsBFIXPSS7JCJh1wo'
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email', 'status']
 
 LOGIN_REDIRECT_URL = '/profile/'
+
+DJANGO_WYSIWYG_FLAVOR = 'yui'       # Default
+DJANGO_WYSIWYG_FLAVOR = 'ckeditor'  # Requires you to also place the ckeditor files here:
+DJANGO_WYSIWYG_MEDIA_URL = STATIC_URL + "ckeditor/"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Full',
+    },
+}
