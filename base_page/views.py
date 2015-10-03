@@ -8,6 +8,9 @@ from django.http import Http404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.conf import settings
+from news.models import article
+from base_page.forms import AddNewForm
+from django.utils import timezone
 # Create your views here.
 
 def context_decan_show(request):
@@ -66,6 +69,8 @@ def profile(request):
     pf = {}
     pf['status'] = 'student' # TODO: get status!
     contex.push({'pf':pf})
+    form = AddNewForm(request.POST or None)
+    contex.update({ 'news_f': form })
     t = get_template('profile.html')
     return HttpResponse(t.render(contex))
 
@@ -106,3 +111,12 @@ def set_stud(request):
     u.set_stud(g.name, g.num)
     u.save()
     return HttpResponseRedirect(reverse('profile'))
+
+def add_news(request):
+    if request.method == 'POST':
+        form = AddNewForm(request.POST)
+        #head = form.cleaned_data.get('head', None)
+        #text = form.cleaned_data.get('text', None)
+        form.save()        
+        return HttpResponseRedirect(reverse('news'))
+    return HttpResponseRedirect(reverse('profile'))    

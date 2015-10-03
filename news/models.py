@@ -1,9 +1,10 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
 class article(models.Model):
     head = models.TextField()
-    text = models.TextField()
-    pub_date = models.DateTimeField('data publishing')
+    text = RichTextField()
+    pub_date = models.DateTimeField(auto_now = True)
     

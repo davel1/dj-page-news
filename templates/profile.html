@@ -2,9 +2,7 @@
 {% load staticfiles %}
 {% load wysiwyg %}
 
-{% block head %}
-{% wysiwyg_setup %}
-{% endblock %}
+
 ﻿
 {% block content %}
 
@@ -32,12 +30,10 @@
     	<ul style="width:100%;">
     	<li><p>add news</p></li>
     	<li class="lib">
-    		<form action="{% url 'set_stud'  %}" method="post">
+    		<form action="{% url 'add_news'  %}" method="post">
 			{% csrf_token %} 
-    		<textarea id="news">This is some text. Please edit it</textarea>
-    		{% wysiwyg_editor "news" %}
-			<input type="radio" name="sendto" value="rad2"> local<Br>
-   			<input type="radio" name="sendto" value="rad3"> all</p>
+			{{ news_f.media }}
+			{{ news_f.as_p }}
 			<input type="submit" value="Отправить" />
 			</form>	
 		</li>
@@ -46,8 +42,7 @@
     	<li class="lib">
 			<form action="{% url 'set_stud'  %}" method="post">
 			{% csrf_token %} 
-    		<textarea id="question">This is some text. Please edit it</textarea>
-    		{% wysiwyg_editor "question" %}
+    		
 			<input type="submit" value="Отправить" />
 			</form>	
 		</li>
@@ -69,3 +64,6 @@
 
 </div>
 {% endblock %}
+
+
+

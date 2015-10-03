@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'social.apps.django_app.default',
     'django_wysiwyg',
     'ckeditor',
+    'ckeditor_uploader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -119,7 +120,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/m/'
 MEDIA_ROOT = "/home/davel/workspace/dj-page/dj-page-news/media/"
-STATIC_ROOT = "/home/davel/workspace/dj-page/dj-page-news/s/"
+STATIC_ROOT = "/home/davel/workspace/dj-page/dj-page-news/st/"
 STATICFILES_DIRS = (
     "/home/davel/workspace/dj-page/dj-page-news/static",
 )
@@ -143,9 +144,11 @@ DJANGO_WYSIWYG_FLAVOR = 'yui'       # Default
 DJANGO_WYSIWYG_FLAVOR = 'ckeditor'  # Requires you to also place the ckeditor files here:
 DJANGO_WYSIWYG_MEDIA_URL = STATIC_URL + "ckeditor/"
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
-
+CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Full',
+        'height': 300,
+        'width': 600,
     },
 }
