@@ -5,7 +5,7 @@
 	<p><b>УИТС</b> - факультет "Управления и Информатики в технологических системах" </p>
 	
    <h3>{{ news.head }}</h3>
-   <p>{{ news.text }}</p>
+   <p>{{ news.text|safe }}</p>
    <p>{{ news.pub_date }}</p>
 </div>
 {% endblock %}

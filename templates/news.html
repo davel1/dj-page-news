@@ -11,7 +11,7 @@
     	{% for x in news_article %}
     	<li>{{ x.head }}</li>
     	<li class="lib">
-    		<p>{{ x.text }}</p>
+    		<p>{{ x.text|safe }}</p>
     		<p>{{ x.pub_date }}</p>
 		</li>
 		{% endfor %}

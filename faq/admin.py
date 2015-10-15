@@ -9,7 +9,7 @@ class AnswerInline(admin.StackedInline):
     
 class QuestionAdmin(admin.ModelAdmin):
     list_display = ('q', 'q_date')
-    fields = ['q', 'q_date']
+    fields = ['q', ]
     inlines = [AnswerInline] 
 
 admin.site.register(question, QuestionAdmin)

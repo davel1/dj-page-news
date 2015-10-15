@@ -9,11 +9,11 @@
 	<div class="accordian" style="width:100%">
     	<ul style="width:100%;">
     	{% for x in faq_q %}
-    	<li>{{ x.q }}</li>
+    	<li>{{ x.q|safe }}</li>
     	<li class="lib">
     		{% for y in faq_a %}
 				{% if y.child == x %}
-				<p>{{ y.r }}</p>
+				<p>{{ y.r|safe }}</p>
 				<p>{{ y.r_date }}</p>
 				{% endif %}
 			{% endfor %}

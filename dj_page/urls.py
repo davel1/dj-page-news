@@ -30,8 +30,9 @@ urlpatterns = [
     url(r'^profile/', views.profile, name='profile'),
     url(r'^set_stud/', views.set_stud, name='set_stud'),
     url(r'^add_news/', views.add_news, name='add_news'),
+    url(r'^add_q/', views.add_q, name='add_q'),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
-    
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+]

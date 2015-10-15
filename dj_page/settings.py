@@ -66,7 +66,7 @@ ROOT_URLCONF = 'dj_page.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates/',],
+        'DIRS': ['/home/davel/repository/dj/dj-page-news/templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,10 +119,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/m/'
-MEDIA_ROOT = "/home/davel/workspace/dj-page/dj-page-news/media/"
-STATIC_ROOT = "/home/davel/workspace/dj-page/dj-page-news/st/"
+MEDIA_ROOT = "/home/davel/repository/dj/dj-page-news/media/"
+STATIC_ROOT = "/home/davel/repository/dj/dj-page-news/st/"
 STATICFILES_DIRS = (
-    "/home/davel/workspace/dj-page/dj-page-news/static",
+    "/home/davel/repository/dj/dj-page-news/static",
 )
 
 AUTHENTICATION_BACKENDS = (

@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.conf import settings
 from news.models import article
-from base_page.forms import AddNewForm
+from base_page.forms import AddNewForm,AddQForm
 from django.utils import timezone
 # Create your views here.
 
@@ -67,10 +67,14 @@ def honor_details(request, id, hon):
 def profile(request):
     contex = RequestContext(request)
     pf = {}
-    pf['status'] = 'student' # TODO: get status!
+    if request.user.is_student():
+        pf['status'] =  'student'
+				# TODO: get status!
     contex.push({'pf':pf})
     form = AddNewForm(request.POST or None)
     contex.update({ 'news_f': form })
+    form2 = AddQForm(request.POST or None)
+    contex.update({ 'Q_f': form2 })
     t = get_template('profile.html')
     return HttpResponse(t.render(contex))
 
@@ -119,4 +123,11 @@ def add_news(request):
         #text = form.cleaned_data.get('text', None)
         form.save()        
         return HttpResponseRedirect(reverse('news'))
+    return HttpResponseRedirect(reverse('profile'))   
+
+def add_q(request):
+    if request.method == 'POST':
+        form = AddQForm(request.POST)
+        form.save()        
+        return HttpResponseRedirect(reverse('faq'))
     return HttpResponseRedirect(reverse('profile'))    
